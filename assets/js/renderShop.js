@@ -28,6 +28,7 @@ class ShopRenderer {
 			const newWallet = newDiv();
 			newWallet.className += 'wallet col-sm-4';
 
+
 			walletsContainer.appendChild(newWallet);
 		
 			const walletOwner = newDiv(); 
@@ -45,6 +46,7 @@ class ShopRenderer {
 			walletButton.innerHTML = "Select Wallet"; 
 			walletButton.dataset.productIndex = i;
 			newWallet.appendChild(walletButton);
+
 		}
 
 		const products = shop.products;
@@ -79,6 +81,7 @@ class ShopRenderer {
 					allWallets[j].removeAttribute('id');
 				}
 				currentWallet.id = 'currentWallet';
+
 			});
 		}
 	}
@@ -88,13 +91,26 @@ class ShopRenderer {
 
 		for(var i = 0; i < products.length; i++) {
 			const purchaseButton = document.getElementById('purchase' + i);
+			const currentWalletEl = document.getElementById('currentWallet');
 			const currentProduct = products[i];
-			
-			purchaseButton.addEventListener('click', function(){
-				const currentWallet = document.getElementById('currentWallet');
-				const walletIndex = currentWallet.dataset.walletIndex;
+			const walletIndex = currentWallet.dataset.walletIndex;
 
-				shop.purchaseProduct(currentProduct, wallets[walletIndex]);
+			const walletEl = document.querySelector('[data-wallet-index="' + i + '"]');
+
+			purchaseButton.addEventListener('click', function(){
+
+				const currentWalletEl = document.getElementById('currentWallet');
+				const currentWalletIndex = currentWalletEl.dataset.walletIndex;
+				const budgetEl = currentWalletEl.getElementsByClassName('budget')[0];
+
+				console.log('currentwalletel');
+				console.log(currentWalletEl);
+				console.log(budgetEl);
+
+				shop.purchaseProduct(currentProduct, wallets[currentWalletIndex]);
+
+				budgetEl.innerHTML = wallets[currentWalletIndex].budget;
+
 			})
 		}
 	}
