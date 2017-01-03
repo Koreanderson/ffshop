@@ -29,7 +29,7 @@ class WalletRenderer {
 
 			const walletButton = document.createElement('button');
 			walletButton.innerHTML = "Select Wallet"; 
-			walletButton.dataset.productIndex = i;
+			walletButton.dataset.walletIndex = i;
 			newWallet.appendChild(walletButton);
 		}
 	}
@@ -38,7 +38,7 @@ class WalletRenderer {
 		const shop = this.shop;
 
 		for(var i = 0; i < wallets.length; i++){
-			const walletButton = document.querySelector('[data-product-index="' + i + '"]');
+			const walletButton = document.querySelector('[data-wallet-index="' + i + '"]');
 			//console.log(this.shop.products[i]);
 
 			walletButton.addEventListener('click', function(){

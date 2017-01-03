@@ -17,7 +17,7 @@ class Shop {
 
 		const price = product.price;
 
-		if (wallet.budget > price && product.quantity > 0){
+		if (wallet.budget >= price && product.quantity > 0){
 			product.quantity--;
 			wallet.budget = wallet.budget - product.price;
 

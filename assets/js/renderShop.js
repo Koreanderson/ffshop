@@ -9,6 +9,7 @@ class ShopRenderer {
 			return document.createElement('div');
 		};
 
+		// Create Shop DOM Element
 		const shopEl = newDiv();
 		shopEl.id = 'shop';
 		shopEl.className += ' container';
@@ -16,6 +17,7 @@ class ShopRenderer {
 
 		document.body.appendChild(shopEl);
 
+		// Create Wallet Container DOM Element
 		const walletsContainer = newDiv();
 		walletsContainer.id = 'walletsContainer';
 		walletsContainer.className = 'container';
@@ -30,7 +32,7 @@ class ShopRenderer {
 
 
 			walletsContainer.appendChild(newWallet);
-		
+
 			const walletOwner = newDiv(); 
 			walletOwner.className = 'owner';
 			walletOwner.innerHTML = currentWallet.owner;
@@ -44,26 +46,29 @@ class ShopRenderer {
 
 			const walletButton = document.createElement('button');
 			walletButton.innerHTML = "Select Wallet"; 
-			walletButton.dataset.productIndex = i;
 			newWallet.appendChild(walletButton);
 
 		}
-
 		const products = shop.products;
-		const productList = document.createElement('div');
+
+		// Create Products DOM Element
+		const productList = newDiv();
 		productList.id = 'productList';
 
 		shopEl.appendChild(productList);
 
 		for(var i = 0; i < products.length; i++) {
 			const newProduct = newDiv();
+			newProduct.dataset.productIndex = i;
 			newProduct.className = ' col-sm-4 product';
 			productList.appendChild(newProduct);
 
+			// Create Product Attribute DOM Elements
 			newProduct.insertAdjacentHTML('beforeend','<div class="name">' + products[i].name + '</div>');
 			newProduct.insertAdjacentHTML('beforeend','<div class="price">' + products[i].price + '</div>');
 			newProduct.insertAdjacentHTML('beforeend','<div class="quantity">' + products[i].quantity + '</div>');
 			newProduct.insertAdjacentHTML('beforeend','<button id="purchase' + i + '">Purchase</button>');
+
 		}
 	}
 	selectWallet(){
@@ -74,7 +79,7 @@ class ShopRenderer {
 			allWallets[0].id = 'currentWallet'; // Set default wallet
 			currentWallet.dataset.walletIndex = i;
 
-			const walletButton = document.querySelector('[data-product-index="' + i + '"]');
+			const walletButton = document.querySelector('[data-wallet-index="' + i + '"]');
 
 			walletButton.addEventListener('click', function(){
 				for (var j = 0; j < allWallets.length; j++){
@@ -94,8 +99,8 @@ class ShopRenderer {
 			const currentWalletEl = document.getElementById('currentWallet');
 			const currentProduct = products[i];
 			const walletIndex = currentWallet.dataset.walletIndex;
-
 			const walletEl = document.querySelector('[data-wallet-index="' + i + '"]');
+			const currentProductIndex = i 
 
 			purchaseButton.addEventListener('click', function(){
 
@@ -103,15 +108,16 @@ class ShopRenderer {
 				const currentWalletIndex = currentWalletEl.dataset.walletIndex;
 				const budgetEl = currentWalletEl.getElementsByClassName('budget')[0];
 
-				console.log('currentwalletel');
-				console.log(currentWalletEl);
-				console.log(budgetEl);
-
 				shop.purchaseProduct(currentProduct, wallets[currentWalletIndex]);
-
 				budgetEl.innerHTML = wallets[currentWalletIndex].budget;
 
-			})
+				// decrement stock quantity
+				const currentQuantity = currentProduct.quantity;
+
+				const currentProductEl = document.querySelector('[data-product-index="' + currentProductIndex +'"]');
+				console.log(currentProductEl.getElementsByClassName('quantity')[0]);
+				currentProductEl.getElementsByClassName('quantity')[0].innerHTML = currentQuantity;
+			});
 		}
 	}
 }
