@@ -33,19 +33,19 @@ class ShopRenderer {
 
 			walletsContainer.appendChild(newWallet);
 
-			const walletOwner = newDiv(); 
+			const walletOwner = newDiv();
 			walletOwner.className = 'owner';
 			walletOwner.innerHTML = currentWallet.owner;
 			newWallet.appendChild(walletOwner);
 
-			const walletBudget = newDiv(); 
+			const walletBudget = newDiv();
 			walletBudget.className = 'budget';
 			walletBudget.innerHTML = currentWallet.budget;
 
 			newWallet.appendChild(walletBudget);
 
 			const walletButton = document.createElement('button');
-			walletButton.innerHTML = "Select Wallet"; 
+			walletButton.innerHTML = "Select Wallet";
 			newWallet.appendChild(walletButton);
 
 		}
@@ -100,7 +100,7 @@ class ShopRenderer {
 			const currentProduct = products[i];
 			const walletIndex = currentWallet.dataset.walletIndex;
 			const walletEl = document.querySelector('[data-wallet-index="' + i + '"]');
-			const currentProductIndex = i 
+			const currentProductIndex = i;
 
 			purchaseButton.addEventListener('click', function(){
 
@@ -113,10 +113,13 @@ class ShopRenderer {
 
 				// decrement stock quantity
 				const currentQuantity = currentProduct.quantity;
-
 				const currentProductEl = document.querySelector('[data-product-index="' + currentProductIndex +'"]');
-				console.log(currentProductEl.getElementsByClassName('quantity')[0]);
-				currentProductEl.getElementsByClassName('quantity')[0].innerHTML = currentQuantity;
+				const productQuantity = currentProductEl.getElementsByClassName('quantity')[0];
+				if (currentQuantity <= 0){
+					productQuantity.innerHTML = 'Out Of Stock';
+				} else{
+					productQuantity.innerHTML = currentQuantity;
+				}
 			});
 		}
 	}
