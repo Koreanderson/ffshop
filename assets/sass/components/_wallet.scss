@@ -1,8 +1,12 @@
 .wallet {
 	padding: 1rem;
-	background: #f1f1f1;
+	background: transparentize(black , .1);
+	background-repeat: no-repeat;
+	color: white;
 	opacity: .5;
+	padding-left: 8rem;
+	text-align: center;
 	&#currentWallet {
-		opacity: .9;
+		opacity: .8;
 	}
 }
