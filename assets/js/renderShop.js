@@ -8,21 +8,28 @@ class ShopRenderer {
 		const newDiv = function(){
 			return document.createElement('div');
 		};
+		// Create Shop Container
+		const shopContain = newDiv();
+		shopContain.id = 'shopContainer';
+		shopContain.className += ' shop-contain container';
+		
+		const headerEl = document.querySelector('.header');
+		document.body.insertBefore(shopContain, headerEl.nextSibling); 
 
 		// Create Shop DOM Element
 		const shopEl = newDiv();
 		shopEl.id = 'shop';
-		shopEl.className += ' container';
+		shopEl.className += 'row';
 		shopEl.innerHTML = '<h1>' + shop.name + '</h1>';
 
-		document.body.appendChild(shopEl);
+		document.getElementById('shopContainer').appendChild(shopEl);
 
 		// Create Wallet Container DOM Element
 		const walletsContainer = newDiv();
 		walletsContainer.id = 'walletsContainer';
-		walletsContainer.className = 'container';
+		walletsContainer.className = 'row';
 		walletsContainer.innerHTML = '<h1>Available Wallets:</h1>';
-		document.body.insertBefore(walletsContainer, shopEl);
+		document.getElementById('shopContainer').insertBefore(walletsContainer, shopEl);
 
 		for(var i = 0; i < wallets.length; i++) {
 			const currentWallet = wallets[i];
