@@ -1,0 +1,21 @@
+{
+  "name": "ff_shop",
+  "version": "1.0.0",
+  "description": "Final Fantasy themed shop",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Koreanderson/ffshop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Koreanderson/ffshop/issues"
+  },
+  "homepage": "https://github.com/Koreanderson/ffshop#readme"
+}
