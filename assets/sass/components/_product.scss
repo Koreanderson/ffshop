@@ -1,5 +1,17 @@
-.product {
-	background: white;
-	border: 1px solid #000;
-	padding: 1rem;
+.products-container {
+	.product {
+		padding: 2rem;
+		background: transparentize(black , .5);
+		background-repeat: no-repeat;
+		color: white;
+		font-size: 2rem;
+		font-weight: lighter;
+		text-align: center;
+		h2 {
+			border-bottom: .5px solid white;
+			font-weight: lighter;
+			letter-spacing: 2px;
+			padding-bottom: .5rem;
+		}
+	}
 }

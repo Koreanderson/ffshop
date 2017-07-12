@@ -1,7 +1,7 @@
 // Products
-const ether = new Product('Ether', '400', '5');
-const potion = new Product('Potion', '300', '5');
-const phoenixDown = new Product('Phoenix Down', '600', '5');
+const ether = new Product('Ether', '400', '5', 'thumb');
+const potion = new Product('Potion', '300', '5', 'thumb');
+const phoenixDown = new Product('Phoenix Down', '600', '5', 'thumb');
 
 // Wallet
 const myWallet = new Wallet('Brian', 2000);

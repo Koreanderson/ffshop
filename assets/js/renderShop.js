@@ -19,7 +19,7 @@ class ShopRenderer {
 		// Create Shop DOM Element
 		const shopEl = newDiv();
 		shopEl.id = 'shop';
-		shopEl.className += 'row';
+		shopEl.className += 'row products-container';
 		shopEl.innerHTML = '<h1>' + shop.name + '</h1>';
 
 		document.getElementById('shopContainer').appendChild(shopEl);
@@ -27,8 +27,8 @@ class ShopRenderer {
 		// Create Wallet Container DOM Element
 		const walletsContainer = newDiv();
 		walletsContainer.id = 'walletsContainer';
-		walletsContainer.className = 'row';
-		walletsContainer.innerHTML = '<h1>Available Wallets:</h1>';
+		walletsContainer.className = 'row wallets-container';
+		walletsContainer.innerHTML = '<h2>Available Wallets:</h2>';
 		document.getElementById('shopContainer').insertBefore(walletsContainer, shopEl);
 
 		for(var i = 0; i < wallets.length; i++) {
@@ -71,6 +71,7 @@ class ShopRenderer {
 			productList.appendChild(newProduct);
 
 			// Create Product Attribute DOM Elements
+			newProduct.insertAdjacentHTML('beforeend','<div class="thumb">' + products[i].thumbnail + '</div>');
 			newProduct.insertAdjacentHTML('beforeend','<div class="name">' + products[i].name + '</div>');
 			newProduct.insertAdjacentHTML('beforeend','<div class="price">' + products[i].price + '</div>');
 			newProduct.insertAdjacentHTML('beforeend','<div class="quantity">' + products[i].quantity + '</div>');
