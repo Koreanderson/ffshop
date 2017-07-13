@@ -5812,8 +5812,13 @@ button.close {
 button,
 a.button {
   background: none;
+  border: 2px solid white;
   padding: 1rem;
-  border: 2px solid white; }
+  opacity: .8; }
+  button:hover,
+  a.button:hover {
+    color: white;
+    opacity: 1; }
 
 .header {
   background: rgba(0, 0, 0, 0.5);
