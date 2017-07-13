@@ -1,6 +1,6 @@
 // Products
 
-const imgDir = document.location + 'assets/img/product-thumbs/';
+const imgDir = document.location.hostname + 'assets/img/product-thumbs/';
 
 const ether = new Product('Ether', '400', '5', imgDir + 'Ether.png');
 const potion = new Product('Potion', '300', '5', imgDir + 'Potion.png');
