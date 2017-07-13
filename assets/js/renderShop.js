@@ -71,7 +71,7 @@ class ShopRenderer {
 			productList.appendChild(newProduct);
 
 			// Create Product Attribute DOM Elements
-			newProduct.insertAdjacentHTML('beforeend','<div class="thumb">' + products[i].thumbnail + '</div>');
+			newProduct.insertAdjacentHTML('beforeend','<div class="thumb"><img src="' + products[i].thumbnail + '"></div>');
 			newProduct.insertAdjacentHTML('beforeend','<div class="name">' + products[i].name + '</div>');
 			newProduct.insertAdjacentHTML('beforeend','<div class="price">' + products[i].price + '</div>');
 			newProduct.insertAdjacentHTML('beforeend','<div class="quantity">' + products[i].quantity + '</div>');

@@ -1,7 +1,10 @@
 // Products
-const ether = new Product('Ether', '400', '5', 'thumb');
-const potion = new Product('Potion', '300', '5', 'thumb');
-const phoenixDown = new Product('Phoenix Down', '600', '5', 'thumb');
+
+const imgDir = document.location + 'assets/img/product-thumbs/';
+
+const ether = new Product('Ether', '400', '5', imgDir + 'Ether.png');
+const potion = new Product('Potion', '300', '5', imgDir + 'Potion.png');
+const phoenixDown = new Product('Phoenix Down', '600', '5', imgDir + 'PhoenixDown.png');
 
 // Wallet
 const myWallet = new Wallet('Brian', 2000);
