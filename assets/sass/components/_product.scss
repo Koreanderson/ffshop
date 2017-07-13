@@ -1,5 +1,10 @@
 .products-container {
-	background: transparentize(black , .5);
+	//background: transparentize(black , .5);
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', endColorstr='#1a000000',GradientType=0 ); /* IE6-9 */
+	
 	padding: 1rem;
 	h2 {
 		border-bottom: .5px solid white;
@@ -14,5 +19,10 @@
 		font-size: 2rem;
 		font-weight: lighter;
 		text-align: center;
+		.thumb img {
+			background: transparentize(black, .5);
+			border: 2px solid transparentize(white,.8);
+			width: 200px;
+		}
 	}
 }

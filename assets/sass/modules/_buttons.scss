@@ -1,6 +1,7 @@
 button,
 a.button {
 	background: none;
+	background: transparentize(black, .5);
 	border: 2px solid white;
 	padding: 1rem;
 	opacity: .8;
