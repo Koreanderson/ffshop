@@ -20,7 +20,7 @@ class ShopRenderer {
 		const shopEl = newDiv();
 		shopEl.id = 'shop';
 		shopEl.className += 'row products-container';
-		shopEl.innerHTML = '<h1>' + shop.name + '</h1>';
+		shopEl.innerHTML = '<h2>' + shop.name + '</h2>';
 
 		document.getElementById('shopContainer').appendChild(shopEl);
 

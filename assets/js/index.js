@@ -20,7 +20,7 @@ const walletRenderer = new WalletRenderer(wallets);
 const myProducts = [ether, potion, phoenixDown];
 
 // Shop
-const myShop = new Shop('Title' , myProducts);
+const myShop = new Shop('My Final Fantasy Shop' , myProducts);
 
 //Shop Renderer
 const shopRenderer = new ShopRenderer(myShop, wallets);

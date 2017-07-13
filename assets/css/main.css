@@ -5838,19 +5838,21 @@ a.button {
 .shop-contain {
   color: white; }
 
-.products-container .product {
-  padding: 2rem;
+.products-container {
   background: rgba(0, 0, 0, 0.5);
-  background-repeat: no-repeat;
-  color: white;
-  font-size: 2rem;
-  font-weight: lighter;
-  text-align: center; }
-  .products-container .product h2 {
+  padding: 1rem; }
+  .products-container h2 {
     border-bottom: .5px solid white;
     font-weight: lighter;
     letter-spacing: 2px;
     padding-bottom: .5rem; }
+  .products-container .product {
+    padding: 2rem;
+    background-repeat: no-repeat;
+    color: white;
+    font-size: 2rem;
+    font-weight: lighter;
+    text-align: center; }
 
 .wallets-container {
   background: rgba(0, 0, 0, 0.5);
