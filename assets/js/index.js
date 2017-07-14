@@ -7,11 +7,11 @@ const potion = new Product('Potion', '300', '5', imgDir + 'Potion.png');
 const phoenixDown = new Product('Phoenix Down', '600', '5', imgDir + 'PhoenixDown.png');
 
 // Wallet
-const myWallet = new Wallet('Brian', 2000);
-const jeffsWallet = new Wallet('Jeff', 5000);
-const justinsWallet = new Wallet('Justin',7700);
+const cloudWallet = new Wallet('Cloud', 7000);
+const tidusWallet = new Wallet('Tidus', 6000);
+const squallWallet = new Wallet('Squall',5000);
 
-const wallets = [myWallet, jeffsWallet, justinsWallet];
+const wallets = [cloudWallet, tidusWallet, squallWallet];
 
 // Wallet Renderer
 const walletRenderer = new WalletRenderer(wallets);
@@ -20,7 +20,7 @@ const walletRenderer = new WalletRenderer(wallets);
 const myProducts = [ether, potion, phoenixDown];
 
 // Shop
-const myShop = new Shop('My Final Fantasy Shop' , myProducts);
+const myShop = new Shop('New Gridania Shop' , myProducts);
 
 //Shop Renderer
 const shopRenderer = new ShopRenderer(myShop, wallets);
