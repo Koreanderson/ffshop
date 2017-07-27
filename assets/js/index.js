@@ -31,4 +31,4 @@ const shopRenderer = new ShopRenderer(myShop, wallets);
 
 shopRenderer.render(myShop, wallets);
 shopRenderer.selectWallet();
-shopRenderer.enablePurchasing(cloudWallet);
+shopRenderer.enablePurchasing();

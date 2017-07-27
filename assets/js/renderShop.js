@@ -98,7 +98,7 @@ class ShopRenderer {
 			});
 		}
 	}
-	enablePurchasing(wallet){
+	enablePurchasing(){
 		const shop = this.shop;
 		const products = this.shop.products;
 
